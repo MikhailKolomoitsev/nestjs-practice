@@ -2,7 +2,7 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   parserOptions: {
     project: 'tsconfig.json',
-    tsconfigRootDir : __dirname, 
+    tsconfigRootDir: __dirname,
     sourceType: 'module',
   },
   plugins: ['@typescript-eslint/eslint-plugin'],
@@ -17,9 +17,11 @@ module.exports = {
   },
   ignorePatterns: ['.eslintrc.js'],
   rules: {
-    '@typescript-eslint/interface-name-prefix': 'off',
-    '@typescript-eslint/explicit-function-return-type': 'off',
-    '@typescript-eslint/explicit-module-boundary-types': 'off',
-    '@typescript-eslint/no-explicit-any': 'off',
+    'prettier/prettier': ['error', { "endOfLine": "auto" }, { usePrettierrc: true }],  // Use our .prettierrc file as source
+    'react/react-in-jsx-scope': 'off',
+    'react/prop-types': 'off',
+    'simple-import-sort/imports': 'error',
+    "simple-import-sort/exports": "error"
   },
+
 };
