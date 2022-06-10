@@ -71,3 +71,11 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](LICENSE).
+
+
+VS Code Setting
+VS Code by default uses absolute path as shown above, when we auto-import using code completion or Command/Ctrl + .. We need to change this default setting to use relative paths.
+
+Go to VS Code settings and search for a setting: Import Module Specifier. Change it from shortest to relative.
+
+Now from here on, VS Code will automatically import using the relative paths.
