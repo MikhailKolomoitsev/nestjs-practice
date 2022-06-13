@@ -35,8 +35,7 @@ describe('App e2e', () => {
     const dto: AuthDto = { email: 'mihon3@gmail.com', password: '1234' };
 
     describe('Signup', () => {
-
-       it('should throw if email is empty', () => {
+      it('should throw if email is empty', () => {
         return pacturm
           .spec()
           .post('/auth/signup')
@@ -101,9 +100,22 @@ describe('App e2e', () => {
     describe('Edit user', () => {});
   });
   describe('Bookmarks', () => {
+    describe('Get empty bookmarks', () => {
+      it('Should return empty bookmarks', () => {
+        return pacturm
+          .spec()
+          .get('/bookmarks')
+          .withHeaders({
+            Authorization: 'Bearer $S{userAt}',
+          })
+          .expectStatus(200)
+          .inspect();
+      });
+    });
     describe('Create bookmark', () => {});
     describe('Get bookmarks', () => {});
     describe('Get bookmark by id', () => {});
-    describe('Delete bookmark', () => {});
+    describe('Get bookmark by id', () => {});
+    describe('Delete bookmark by id', () => {});
   });
 });
